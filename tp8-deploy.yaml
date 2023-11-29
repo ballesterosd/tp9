@@ -46,11 +46,16 @@ spec:
             cpu: "200m"
         volumeMounts:
         - name: config-volume
-          mountPath: /app
+          mountPath: /app/secrets
+        - name: appsettings-sealedsecret
+          mountPath: /app/secrets/appsettings.json
       volumes:
       - name: config-volume
         configMap:
           name: mi-configmap
+      - name: appsettings-sealedsecret
+        sealedSecret:
+          name: mi-appsettings-sealedsecret          
       imagePullSecrets:
       - name: dockerhub-secret          
 ---
