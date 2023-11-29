@@ -55,7 +55,7 @@ spec:
           name: mi-configmap
       - name: appsettings-sealedsecret
         sealedSecret:
-          name: mi-appsettings-sealedsecret          
+          name: my-app-secret          
       imagePullSecrets:
       - name: dockerhub-secret          
 ---
